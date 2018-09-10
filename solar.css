@@ -1,0 +1,96 @@
+.merc {
+	position: relative;
+  display: flex;
+  background: blue;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+	background: radial-gradient(circle at 5px 5px, #5cabff, #000);
+}
+
+.venus {
+	position: relative;
+  display: block;
+  background: blue;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  margin: 100;
+	background: radial-gradient(circle at 5px 5px, #5cabff, #000);
+}
+
+
+.earth {
+	/*
+	animation-name: straightLine;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	*/
+	animation: xAxis 2.5s infinite cubic-bezier(0.02, 0.01, 0.21, 1);
+}
+
+.earth::after {
+	content:'';
+	position: relative;
+  display: block;
+  background: blue;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin: 100;
+	background: radial-gradient(circle at 5px 5px, #5cabff, #000);
+	/*
+	animation-name: straightLine;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	*/
+	animation: yAxis 2.5s infinite cubic-bezier(0.3, 0.27, 0.07, 1.64);
+}
+
+
+@keyframes yAxis {
+  50% {
+    -webkit-animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-250px);
+  }
+}
+
+@keyframes xAxis {
+  50% {
+    -webkit-animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+    -webkit-transform: translateX(100px);
+    transform: translateX(-200px);
+  }
+}
+
+.sun{
+  display: block;
+  background: orange;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+	background: radial-gradient(circle at 33px 33px, #FE6B01, #000);
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+body{
+	background: black;
+}
+
+@keyframes straightLine {
+  50% {
+    transform: translate3D(100px, -100px, 0);
+  }
+}
+
